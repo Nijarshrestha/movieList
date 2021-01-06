@@ -1,0 +1,19 @@
+.homepage__main__container {
+  .header__section {
+    text-align: center;
+    margin: 50px auto;
+  }
+
+  .movie__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 40px;
+    margin: auto 20%;
+
+    .movie__list__wrap {
+      // overflow: hidden;
+      // height: 0;
+    }
+  }
+}

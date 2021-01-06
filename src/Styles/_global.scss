@@ -1,0 +1,38 @@
+// All the global scss configs goes here
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Rubik:wght@300&display=swap");
+@import "../Styles/variables";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.App {
+  font-family: "poppins", sans-serif;
+}
+
+p {
+  color: $brandGray;
+  margin: 2px auto;
+}
+
+h4 {
+  color: $thirdColor;
+  padding: 10px auto;
+}
+
+h3 {
+  color: $thirdColor;
+}
+
+.divider {
+  margin: 15px;
+}
+
+.loading {
+  text-align: center;
+}
+
+h1 {
+  color: $primaryColor;
+}

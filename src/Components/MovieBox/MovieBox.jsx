@@ -1,10 +1,10 @@
 import React from 'react';
-import { randomImageGenerator, randomMovieImages } from '../../Utils/RandomImageGenerator';
+import {renderRandomImages, randomMovieImages } from '../../Utils/RandomImageGenerator';
 import Modal from '../Common/Modal/Modal';
 
 import './MovieBox.scss';
 
-export default function MovieBox({data, key, onClickHandler, showDescription}) {
+export default function MovieBox({data, index, onClickHandler, showDescription}) {
     const [directorDetail, setDirectorDetail] = React.useState(null);
 
     function _onHandleDirectorPopUp(e,data){
@@ -17,11 +17,15 @@ export default function MovieBox({data, key, onClickHandler, showDescription}) {
         setDirectorDetail(null)
 
     }
+
+  
+   
+    
     return (
-        <div key={key} className="movie__box__container" onClick={onClickHandler}>
+        <div key={index} className="movie__box__container" onClick={onClickHandler}>
             <div className="movie__overview">
             <section>
-                <img src={randomImageGenerator(randomMovieImages,7)} alt="movie"
+                <img src={renderRandomImages(randomMovieImages, index)} alt="movie"
                 />
             </section>
             <section>

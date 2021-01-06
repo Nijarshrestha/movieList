@@ -1,6 +1,6 @@
 export const randomMovieImages = [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-rABBx-tOhUKiHkplCzw47uqe4AUtlQU-aw&usqp=CAU',
-    'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/068DC075BDB49E11BD8C2CA9D28346CD81D8A8E961677019167B1D27D9648948/scale?width=1200&aspectRatio=1.78&format=jpeg',
+   
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxmZeSLF4JwxKWBLo9xnzo_sBRHOjXw7ya_g&usqp=CAU",
     'https://livijumpa2.files.wordpress.com/2013/12/impossible.jpg',
     'https://dcassetcdn.com/design_img/16298/35582/35582_406182_16298_image.jpg',
@@ -18,3 +18,23 @@ export const randomDirectorImages=[
 export function randomImageGenerator(array, number){
     return array[Math.floor(Math.random() *number)]
 }
+
+export function renderRandomImages(randomMovieImages, keys){
+    let screenWidth =  window.screen.width ;
+    let desiredResolution = screenWidth<768? '200/300':'300/200';
+    
+    for (let i=keys;i<100; i++){
+        if(i<6){
+            if(screenWidth<768){
+               return `https://picsum.photos/${desiredResolution}?random=${i}` 
+            }else{
+                return randomMovieImages[i]
+            }
+        }else{
+            return `https://picsum.photos/${desiredResolution}?random=${i}`
+
+        }
+            
+    }
+}
+

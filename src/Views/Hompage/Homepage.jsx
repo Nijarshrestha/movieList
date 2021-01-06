@@ -11,6 +11,11 @@ export default function Homepage() {
     const [error, setError] = React.useState(null);
     const [showDescription, setShowDescription] = React.useState(null)
 
+    function _onClickShowDescription(e, index){
+        e.stopPropagation();
+        setShowDescription(index)
+    }
+
     React.useEffect(() => {
         async function fetchMovieData() {
             setLoading((prevState) => !prevState)
@@ -47,7 +52,7 @@ export default function Homepage() {
                         <div
                             className="movie__list__wrap">
                             <MovieBox data={movie} key={index}
-                                onClickHandler={() => setShowDescription(index)}
+                                onClickHandler={(e) => _onClickShowDescription(e,index)}
                                 showDescription={index === showDescription ? true : false}
                             />
                         </div>)}

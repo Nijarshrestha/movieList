@@ -11,6 +11,12 @@ export default function MovieBox({data, key, onClickHandler, showDescription}) {
         e.stopPropagation();
         setDirectorDetail(data);
     }
+
+    function _onClickClosePopUp(e){
+        e.stopPropagation();
+        setDirectorDetail(null)
+
+    }
     return (
         <div key={key} className="movie__box__container" onClick={onClickHandler}>
             <div className="movie__overview">
@@ -35,7 +41,7 @@ export default function MovieBox({data, key, onClickHandler, showDescription}) {
             </div>
             </>
              }
-             {directorDetail && <Modal director={directorDetail} onClose = {()=> setDirectorDetail(null)}/>}
+             {directorDetail && <Modal director={directorDetail} onClose = {(e)=> _onClickClosePopUp(e)}/>}
         </div>
     )
 }
